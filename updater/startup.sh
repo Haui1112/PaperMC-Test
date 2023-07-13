@@ -38,12 +38,15 @@ then
   fi
 fi
 
+#Plugins places to check in chron order: Hangar, Modrinth, Spigot, Bukkit, Source (github etc)
 #Check Plugins (after first run so plugins folder exists)
-#cd plugins
-  #Check Hangar List
-  #Check Spigot List
-  #Check Bukkit List
-  #Check Source
+#1. get plugin list
+
+#cd plugins #change directory since the plugins are somewhere else
+
+#2. check plugin folder for stuff to add to the list
+#3. check list against mod databases 
+#cd .. # change back to main folder
 
 # Add RAM options to Java options if necessary
 if [ ! -z "${MC_RAM}" ]

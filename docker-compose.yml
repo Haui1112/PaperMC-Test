@@ -1,15 +1,16 @@
 version: '3'
 services:
   minecraft:
+    image: haui/papermc
     build: ./
     ports:
       - 25565:25565
-    volumes:
-      - minecraft:/var/minecraft
-    environment:
-      - MC_VERSION="latest"
-      - PAPER_BUILD="latest"
-      - MC_RAM=""
-      - JAVA_OPTS=""
-volumes:
-  minecraft:
+#    volumes:
+#      - minecraft:/var/minecraft
+#    environment:
+#      - MC_VERSION="latest"
+#      - PAPER_BUILD="latest"
+#      - MC_RAM=""
+#      - JAVA_OPTS=""
+#volumes:
+#  minecraft:
