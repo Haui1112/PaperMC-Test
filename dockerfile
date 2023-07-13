@@ -22,4 +22,4 @@ WORKDIR /var/minecraft/updater
 ENTRYPOINT [ "sh" , "./startup.sh" ]
 EXPOSE 25565/tcp
 EXPOSE 25565/udp
-VOLUME /minecraft
+VOLUME /var/minecraft
