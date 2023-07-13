@@ -3,14 +3,17 @@ services:
   minecraft:
     image: haui/papermc
     build: ./
+    container_name: minecraft
     ports:
       - 25565:25565
-#    volumes:
-#      - minecraft:/var/minecraft
+    tty: true
+    stdin_open: true
+    volumes:
+      - minecraft:/var/minecraft
 #    environment:
 #      - MC_VERSION="latest"
 #      - PAPER_BUILD="latest"
 #      - MC_RAM=""
 #      - JAVA_OPTS=""
-#volumes:
-#  minecraft:
+volumes:
+  minecraft:
