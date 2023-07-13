@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Enter server directory
-cd papermc
+cd ..
 
 # Get version information and build download URL and jar name
 URL=https://papermc.io/api/v2/projects/paper
-if [ ${MC_VERSION} = latest ]
+if [ ${MC_VERSION} = latest ] || [ -z "${MC_VERSION}" ];  
 then
   # Get the latest MC version
   MC_VERSION=$(wget -qO - $URL | jq -r '.versions[-1]') # "-r" is needed because the output has quotes otherwise
@@ -16,6 +16,7 @@ then
   # Get the latest build
   PAPER_BUILD=$(wget -qO - $URL | jq '.builds[-1]')
 fi
+
 JAR_NAME=paper-${MC_VERSION}-${PAPER_BUILD}.jar
 URL=${URL}/builds/${PAPER_BUILD}/downloads/${JAR_NAME}
 
@@ -36,6 +37,13 @@ then
     sed -i 's/false/true/g' eula.txt
   fi
 fi
+
+#Check Plugins (after first run so plugins folder exists)
+#cd plugins
+  #Check Hangar List
+  #Check Spigot List
+  #Check Bukkit List
+  #Check Source
 
 # Add RAM options to Java options if necessary
 if [ ! -z "${MC_RAM}" ]
