@@ -41,7 +41,9 @@ fi
 #Plugins places to check in chron order: Hangar, Modrinth, Spigot, Bukkit, Source (github etc)
 #Check Plugins (after first run so plugins folder exists)
 #1. get plugin list
-
+while IFS= read -r line; do
+    echo "Text read from file: $line"
+done < plugins.txt
 #cd plugins #change directory since the plugins are somewhere else
 
 #2. check plugin folder for stuff to add to the list
